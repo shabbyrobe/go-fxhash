@@ -5,7 +5,7 @@ The Fx Hash algorithm from the Rust compiler, ported to Go.
 https://github.com/rust-lang/rustc-hash/blob/master/src/lib.rs
 
 I used this in a project where I needed a basic hash function of adequate
-quality to go as fast as possible on a Raspberry Pi, fnv1-a was too slow and I
+quality to meet specific performance numbers on a Raspberry Pi, fnv1-a was too slow and I
 didn't fancy getting even more distracted by a Go Assembly yak-shaving exercise
 than I already was while making this lib (though that'll probably happen at
 some point).
