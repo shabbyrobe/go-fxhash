@@ -1,0 +1,9 @@
+[package]
+name = "fxtester"
+version = "0.1.0"
+authors = ["shabbyrobe <code@shabbyrobe.org>"]
+edition = "2018"
+
+[dependencies]
+byteorder = "1"
+fxhash = "0.2.1"
