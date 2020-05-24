@@ -13,8 +13,10 @@ var BenchHash64Result uint64
 func BenchmarkFNV1a64(b *testing.B) {
 	data := make([]byte, 128)
 	rand.Read(data)
+
 	for idx, sz := range hashSizes {
 		b.Run(fmt.Sprintf("%d-%d", idx, sz), func(b *testing.B) {
+			b.SetBytes(int64(sz))
 			for i := 0; i < b.N; i++ {
 				BenchHash64Result = fnv1a64(data[:sz])
 			}
@@ -25,8 +27,10 @@ func BenchmarkFNV1a64(b *testing.B) {
 func BenchmarkFxHash(b *testing.B) {
 	data := make([]byte, 128)
 	rand.Read(data)
+
 	for idx, sz := range hashSizes {
 		b.Run(fmt.Sprintf("%d-%d", idx, sz), func(b *testing.B) {
+			b.SetBytes(int64(sz))
 			for i := 0; i < b.N; i++ {
 				BenchHash64Result = Sum64(data[:sz])
 			}
